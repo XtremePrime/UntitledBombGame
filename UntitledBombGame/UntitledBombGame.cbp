@@ -12,8 +12,16 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="sfml-network-d" />
+					<Add library="sfml-audio-d" />
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-system-d" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/UntitledBombGame" prefix_auto="1" extension_auto="1" />
@@ -25,12 +33,26 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="sfml-network" />
+					<Add library="sfml-audio" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="include" />
 		</Compiler>
+		<Linker>
+			<Add directory="lib" />
+		</Linker>
+		<Unit filename="src/game.cpp" />
+		<Unit filename="src/game.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/states/introstate.h" />
+		<Unit filename="src/states/state.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
