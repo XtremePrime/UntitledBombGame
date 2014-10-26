@@ -9,6 +9,8 @@ class IntroState : public State{
 private:
 	sf::Font _font;
 	sf::Text _title;
+	sf::Text _version;
+	const sf::String GAME_VER = "0.1"; 
 protected:
 	static IntroState* _instance;
 	IntroState(){}
