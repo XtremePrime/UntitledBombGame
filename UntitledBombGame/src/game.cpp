@@ -28,7 +28,7 @@ void Game::handle_events(){
         switch(_event.type)
         {
             case sf::Event::KeyPressed:
-            if(event.key.code == sf::Keyboard::Escape)
+            if(_event.key.code == sf::Keyboard::Escape)
                     quit();
                 break;
             case sf::Event::Closed:
