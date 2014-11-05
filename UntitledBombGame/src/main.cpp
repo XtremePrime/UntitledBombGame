@@ -2,13 +2,14 @@
 #include <iostream>
 #include "game.h"
 #include "states/introstate.h"
+#include "states/gamestate.h"
 
 int main()
 {
     Game game;
     game.init();
 
-    game.change_state(IntroState::instance());
+    game.change_state(GameState::instance());
 
     sf::Clock clock;
 

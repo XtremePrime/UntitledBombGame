@@ -15,7 +15,7 @@ private:
 	std::vector<State*> _state_stack;
 	sf::Event _event;
 public:
-	static const int GAME_WIDTH = 640, GAME_HEIGHT = 480;
+	static const int GAME_WIDTH = 480, GAME_HEIGHT = 480;
 	sf::RenderWindow* get_window(){ return &_window; }
 	void init();
 	void cleanup();
