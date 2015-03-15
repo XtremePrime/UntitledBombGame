@@ -3,6 +3,7 @@
 #include <iostream>
 #include "state.h"
 #include "introstate.h"
+#include "gamestate.h"
 
 IntroState* IntroState::_instance;
 
@@ -19,7 +20,7 @@ void IntroState::init(){
 	_title.setFont(_font);
 	_title.setString("Untitled Bomb Game");
 	_title.setColor(sf::Color(255,255,255));
-	_title.setCharacterSize(30);
+	_title.setCharacterSize(25);
 	_title.setPosition(20, 20);
 
 	_version.setFont(_font);
@@ -34,7 +35,10 @@ void IntroState::cleanup(){
 }
 
 void IntroState::handle_events(Game* game, sf::Event event){
-
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+	{
+    	change_state(game, GameState::instance());
+	}
 }
 
 void IntroState::update(Game* game, sf::Time deltaTime){
